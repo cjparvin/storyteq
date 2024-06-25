@@ -1,0 +1,142 @@
+@use "../../breakpoints" as break;
+
+$color-muted-text : #4C5156;
+
+.VehicleItem {
+  align-items: center;
+
+  color: black;
+  display: flex;
+  font-family: "Roboto", Arial;
+
+  picture {
+    display: inline-block;
+    flex-grow: 0;
+    line-height: 0;
+  }
+
+  img {
+    width: 170px;
+  }
+
+  .summary {
+    align-self: stretch;
+    border-color: #dbdfe3;
+    border-style: solid;
+
+    border-width: 0 1px 1px 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    padding: 20px 32px 4px 32px;
+  }
+
+  .title {
+    font-size: 1.6em;
+    letter-spacing: .1em;
+    margin: 8px 0 0 0;
+    padding: 0;
+  }
+
+  .price {
+    color: $color-muted-text;
+
+    font-size: 1.2em;
+    letter-spacing: .1em;
+    margin: 0;
+    margin-top: 4px;
+  }
+
+  .description {
+    align-items: center;
+    color: $color-muted-text;
+
+    //margin-top: 22px;
+    display: flex;
+    flex-grow: 1;
+
+    font-size: 1.2em;
+    margin: 0;
+  }
+
+  @include break.nonMobile() {
+    align-items: stretch;
+    flex-direction: column;
+
+    .summary {
+
+      align-items: center;
+      align-self: auto;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .title {
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+
+      padding: 8px;
+      //margin: 6px 0 0 0;
+    }
+
+    .price {
+      font-size: 1.2em;
+    }
+
+    .price,
+    .description {
+      margin-top: 0;
+      padding: 6px;
+    }
+  }
+
+  @include break.tablet() {
+
+    img {
+      width: 100%;
+    }
+
+    .title {
+      font-size: 1.1em;
+      margin-top: 24px;
+      padding: 2px;
+    }
+
+    .price {
+      margin-top: 16px;
+    }
+
+    .description,
+    .price {
+      font-size: .9em;
+    }
+  }
+
+  @include break.desktop() {
+
+    img {
+      width: 700px;
+    }
+
+    .summary {
+      padding: 32px;
+    }
+
+    .title {
+      font-size: 1.8em;
+      margin-top: 16px;
+      padding: 6px;
+    }
+
+    .price {
+      font-weight: bold;
+      margin-top: 30px;
+    }
+
+    .description {
+      font-size: 1.4em;
+      margin-top: 10px;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@use "../../breakpoints" as break;
+
+.VehicleList {
+  width: 100%;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin: 4px 0;
+    padding: 0;
+  }
+
+  @include break.tablet() {
+
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      margin: 0;
+    }
+  }
+
+  @include break.desktop() {
+
+    ul {
+      flex-direction: row;
+      margin: 0;
+      overflow: auto;
+    }
+  }
+}
